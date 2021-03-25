@@ -1,1 +1,6 @@
-<p>seat-item works!</p>
+<button class="seat btn" [class]="{
+        'btn-danger': seat.booked,
+        'btn-success': isSelected,
+        'btn-secondary': !isSelected && !seat.booked
+    }" [disabled]="seat.booked" (click)="handleSelect()">{{seat.name}}
+</button>

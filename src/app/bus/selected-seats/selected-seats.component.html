@@ -1,1 +1,9 @@
-<p>selected-seats works!</p>
+<div class="container">
+    <h3 class="">Danh sách ghế đang chọn
+        <span *ngIf="selectedSeats.length > 0">({{selectedSeats.length}})</span>
+    </h3>
+    <p *ngFor="let seat of selectedSeats">
+        Ghế: {{seat.name}} - {{seat.price}}$
+        <span class="text-danger" (click)="hanldeRemove(seat.id)">[Hủy]</span>
+    </p>
+</div>

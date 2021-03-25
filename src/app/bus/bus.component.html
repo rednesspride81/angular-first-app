@@ -1,1 +1,11 @@
-<p>bus works!</p>
+<div class="container">
+    <h1 class="text-danger text-center">Đặt vé xe Cybersoft</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <app-seat-list #seatListRef [seatList]="seatList" (onSelect)="handleSelect($event)"></app-seat-list>
+        </div>
+        <div class="col-sm-6">
+            <app-selected-seats [selectedSeats]="selectedSeats" (onRemove)="handleRemove($event)"></app-selected-seats>
+        </div>
+    </div>
+</div>
