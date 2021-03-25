@@ -1,3 +1,9 @@
 <app-toggle #toggle></app-toggle>
+<app-toggle #toggle></app-toggle>
 <br />
-<button class="btn btn-info" (click)="toggle.toggle()">Click</button>
+<!-- Gọi toggle trực tiếp trong html -->
+<!-- <button class="btn btn-info" (click)="toggle.toggle()">Click</button> -->
+
+<button class="btn btn-info" (click)="handleToggle()">Toggle</button>
+
+<button class="btn btn-info" (click)="handleToggleAll()">Toggle ALL</button>
