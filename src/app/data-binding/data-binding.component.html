@@ -1,0 +1,43 @@
+<!-- interpolation -->
+<p>{{message}}</p>
+
+<p>Name:{{student.name}} Age:{{student.age}} </p>
+
+<!-- Property binding -->
+<!-- <input type="text" value="{{message}}"> ít dùng-->
+<input type="text" [value]=message [disabled]=disabled>
+
+<!-- Event binding -->
+<button type="button" (click)="setDisabled()">Set Disabled</button>
+<br />
+<!-- Kết hợp giữa property binding và event binding -->
+<p>{{userName}}</p>
+<input type="text" [value]="userName" (input)="changeUserName($event)" />
+<input type="text" [value]="userName" (change)="changeUserName($event)" />
+
+<!--Sử dụng reference truyền giá trị ô input vào email -->
+<p>Email:{{email}}</p>
+<input type="text" #emailRef />
+<button (click)="changeEmail(emailRef)">Change Email</button>
+
+<!-- ForBinding -->
+<p>Address: {{address}} </p>
+<input [(ngModel)]="address" />
+
+<p>Color: {{color}}</p>
+<select [(ngModel)]="color">
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+    <option value="yellow">yellow</option>
+</select>
+
+<br>
+<label for="email">Email</label>
+<input [(ngModel)]="email" id="email" placeholder="Nhập email" />
+<br>
+<label for="fullName">FullName</label>
+<input #fullNameRef [value]="fullName" id="fullName" placeholder="Enter your name">
+<br>
+<button (click)="changeFullName(fullNameRef)">Submit</button>
+<p>Email:{{email}}</p>
+<p>FullName:{{fullName}}</p>

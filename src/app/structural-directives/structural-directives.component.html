@@ -1,0 +1,81 @@
+<h1>*ngIf</h1>
+
+<button (click)="isActive=!isActive">Toggle Active</button>
+<p *ngIf="!isActive">Cyber Soft FALSE</p>
+
+
+<!-- div này chỉ được hiển thị khi isLogin = true -->
+<div *ngIf="isLogin; else loginTemplate">
+    <p>Welcome back!!!</p>
+    <button class="btn btn-info" (click)="isLogin=false">Log out</button>
+</div>
+
+<!-- <h1>Cachs1: sử dụng ngIF</h1> -->
+<!-- div này chỉ được hiển thị khi isLogin = false -->
+<!-- <div *ngIf="!isLogin">
+    <p>Please Login</p>
+    <button class="btn btn-secondary" (click)="isLogin=true">Login</button>
+</div> -->
+
+
+<!-- <h2>Sử dụng else kết hợp vs ng-template</h2> -->
+<!-- Mặc định là ng-template mặc định là nội dung bên trong ng-template sẽ ko đc hiển thị ra view và nó chỉ đc hiển thị ra khi mình gọi tới bằng cách gọi tới reference của nó-->
+<ng-template #loginTemplate>
+    <div>
+        <p>Please Login</p>
+        <button class="btn btn-secondary" (click)="isLogin=true">Login</button>
+    </div>
+</ng-template>
+
+<h2>ngSwitch</h2>
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'primary'" class="bg-primary">Primary</p>
+    <p *ngSwitchCase="'secondary'" class="bg-secondary">secondary</p>
+    <p *ngSwitchCase="'warning'" class="bg-warning">warning</p>
+    <p *ngSwitchCase="'danger'" class="bg-danger">danger</p>
+    <p *ngSwitchCase="'success'" class="bg-success">success</p>
+    <p *ngSwitchDefault>Default</p>
+</div>
+
+<select [(ngModel)]="color">
+    <option value="">Default</option>
+    <option value="primary">primary</option>
+    <option value="secondary">secondary</option>
+    <option value="warning">warning</option>
+    <option value="danger">danger</option>
+    <option value="success">success</option>
+</select>
+
+<h3>ngFor</h3>
+<div>
+    <p *ngFor="let student of students; let index = index">
+        STT: {{index + 1}} -
+        Name: {{student.name}} - Email: {{student.email}} - Score: {{student.score}}
+    </p>
+</div>
+
+<!-- Angular ko cho xuất hiện 2 structual-directive trên cùng 1 thẻ mà ko muốn có thẻ div dư-->
+<ng-container *ngIf="students">
+    <p *ngFor="let student of students; let index = index">
+        STT: {{index + 1}} -
+        Name: {{student.name}} - Email: {{student.email}} - Score: {{student.score}}
+        <ng-container *ngTemplateOutlet="alertTemplate">
+        </ng-container>
+    </p>
+</ng-container>
+
+<!-- Kết hợp giữa ng-container và ng-template bằng cách sử dụng -->
+<!-- Sử dụng directive *ngTemplateOutlet -->
+<ng-container *ngTemplateOutlet="alertTemplate">
+</ng-container>
+<ng-container *ngTemplateOutlet="alertTemplate">
+</ng-container>
+<ng-container *ngTemplateOutlet="alertTemplate">
+</ng-container>
+
+<!-- thường ng template để cuối file html, chỗ nào sử dụng nó thì gọi ra xài -->
+<ng-template #alertTemplate>
+    <div class="alert alert-danger">
+        <strong>Something went wrong</strong>
+    </div>
+</ng-template>

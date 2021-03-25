@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label for="name">Tên phim</label>
+    <input type="text" name="" id="name" class="form-control" [(ngModel)]="form.name">
+</div>
+<div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" name="" id="price" class="form-control" [(ngModel)]="form.price">
+</div>
+<div class="form-group">
+    <label for="img">Hình ảnh</label>
+    <input type="text" name="" id="img" class="form-control" [(ngModel)]="form.img">
+</div>
+
+<button class="btn btn-primary" (click)="handleAddMovie()">Thêm phim</button>
