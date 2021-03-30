@@ -1,0 +1,32 @@
+<!-- upper case -->
+<p>{{"pipe uppercase" | uppercase}}</p>
+<p>{{message | uppercase}}</p>
+
+<!-- lower case -->
+<p>{{"pipe UPERCASSE" | lowercase}}</p>
+
+<!-- percent -->
+<p>{{tax | percent}}</p>
+
+<!-- Currency -->
+<p>{{price | currency:"VND"}}</p>
+
+<!-- Date -->
+<p> {{today | date:"dd/MM/yyyy hh:mm:ss"}}</p>
+
+<!-- JSon -->
+<p>{{student | json}}</p>
+
+<!-- Number -->
+<p>{{total | number}}</p>
+
+<!-- slice -->
+<p *ngFor="let color of colors | slice:0:3">{{color}}</p>
+
+<!-- Key value -->
+<p *ngFor="let item of student | keyvalue">{{item.key}} - {{item.value}}</p>
+
+<p>{{"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus unde, inventore reprehenderit soluta minima ad
+    pariatur commodi nihil quae maxime dolores laboriosam? Aliquam aspernatur voluptate distinctio soluta esse illum.
+    Sint, quod voluptates veritatis, doloribus soluta quaerat accusantium iure expedita quia pariatur fugiat provident
+    modi perspiciatis ad delectus enim sit tempore!" | shortcut:1000}}</p>

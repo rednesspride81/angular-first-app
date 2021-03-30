@@ -1,3 +1,4 @@
+import { MovieRoutingModule } from './movie-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieComponent } from './movie.component';
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
     MovieItemComponent,
     AddMovieComponent,
   ],
-  imports: [CommonModule, FormsModule],
-  exports: [MovieComponent],
+  imports: [CommonModule, FormsModule, MovieRoutingModule],
+  // Sử dụng routing nên không cần export component
+  // exports: [MovieComponent],
 })
 export class MovieModule {}

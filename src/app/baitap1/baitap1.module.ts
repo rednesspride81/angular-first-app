@@ -21,7 +21,7 @@ import { Baitap1Component } from './baitap1.component';
     // SidebarComponent,
     // ContentComponent,
     // FooterComponent,
-    Baitap1Component,
+    // Baitap1Component,
   ],
 })
 export class Baitap1Module {}

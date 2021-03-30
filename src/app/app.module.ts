@@ -17,6 +17,16 @@ import { TestDirectiveDirective } from './test-directive/test-directive.directiv
 import { MovieModule } from './movie/movie.module';
 import { ViewchildModule } from './viewchild/viewchild.module';
 import { BusModule } from './bus/bus.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// import material module
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { PipeComponent } from './pipe/pipe.component';
+import { ShortcutPipe } from './pipe/shortcut/shortcut.pipe';
+
 // type decorate - Khai báo cho angular biết đây là 22 cm mode
 // Component bắt buộc phải được quản lý bởi 1 modules
 //
@@ -30,6 +40,8 @@ import { BusModule } from './bus/bus.module';
     AttributeDirectivesComponent,
     CardComponent,
     TestDirectiveDirective,
+    PipeComponent,
+    ShortcutPipe,
   ],
   // Nơi khai báo các module cần quản lý
   // module do angular cung cấp: RouterModule, FormsModule, HttpClientModule
@@ -44,6 +56,11 @@ import { BusModule } from './bus/bus.module';
     MovieModule,
     ViewchildModule,
     BusModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
 
   // Nơi khai báo các services cần sử dụng
