@@ -9,7 +9,10 @@
 
     <!-- Body -->
     <div class="flex-grow-1">
-        <ng-content></ng-content>
+        <!-- Sử dụng ng-content nhược điểm là layout bị load lại khi thay đổi routing -->
+        <!-- <ng-content></ng-content> -->
+        <!-- Sử dụng router outlet -->
+        <router-outlet></router-outlet>
     </div>
 
     <!-- Footer -->

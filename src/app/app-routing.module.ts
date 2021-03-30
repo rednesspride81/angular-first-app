@@ -1,3 +1,4 @@
+import { AdminModule } from './admin/admin.module';
 import { MainModule } from './main/main.module';
 import { Baitap2Component } from './baitap2/baitap2.component';
 import { Baitap1Component } from './baitap1/baitap1.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   // Cách 2: routing theo module
   // Khi gắn module vào trong routing, ta không cần gắn module đó vào mảng import trong app module
   { path: 'movie', loadChildren: () => MovieModule },
+  { path: 'admin', loadChildren: () => AdminModule },
   { path: '', loadChildren: () => MainModule },
   // { path: '', pathMatch = "full", loadChildren: () => MainModule },
 ];
