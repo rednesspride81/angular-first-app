@@ -16,6 +16,7 @@ import { CardComponent } from './card/card.component';
 import { TestDirectiveDirective } from './test-directive/test-directive.directive';
 import { MovieModule } from './movie/movie.module';
 import { ViewchildModule } from './viewchild/viewchild.module';
+import { BusModule } from './bus/bus.module';
 // type decorate - Khai báo cho angular biết đây là 22 cm mode
 // Component bắt buộc phải được quản lý bởi 1 modules
 //
@@ -42,6 +43,7 @@ import { ViewchildModule } from './viewchild/viewchild.module';
     FormsModule,
     MovieModule,
     ViewchildModule,
+    BusModule,
   ],
 
   // Nơi khai báo các services cần sử dụng
